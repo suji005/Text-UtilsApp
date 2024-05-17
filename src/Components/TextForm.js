@@ -43,28 +43,28 @@ const TextForm = (props) => {
             rows="10"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpclick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpclick}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleLowerclick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLowerclick}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={clearText}>
+        <button className="btn btn-primary mx-1 my-1" onClick={clearText}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-1"  onClick={copyText}>
+        <button className="btn btn-primary mx-1 my-1"  onClick={copyText}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-1"  onClick={removeExtraSpace}>
+        <button className="btn btn-primary mx-1 my-1"  onClick={removeExtraSpace}>
           Remove ExtraSpace
         </button>
       </div>
       <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
         <h1>Text Summary</h1>
         <p>
-          {text.split(" ").length} words, {text.length} characters
+          {text.split(" ").filter((Element)=>{return Element.length!==0}).length} words, {text.length} characters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes to read</p>
+        <p>{0.008 * text.split(" ").filter((Element)=>{return Element.length!==0}).length} Minutes to read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:'Enter something to preview here'}</p>
       </div>
