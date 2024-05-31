@@ -32,7 +32,7 @@ const TextForm = (props) => {
   return (
     <>
       <div className="container" style={{color: props.mode==='dark'?'white':'black'}}>
-        <h1>{props.heading}</h1>
+        <h1 className="mb-4">{props.heading}</h1>
         <div className="mb-3">
           <textarea
             className="form-control"
@@ -43,19 +43,20 @@ const TextForm = (props) => {
             rows="10"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpclick}>
+        
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpclick}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLowerclick}>
+        <button  disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLowerclick}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={clearText}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={clearText}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-1 my-1"  onClick={copyText}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1"  onClick={copyText}>
           Copy Text
         </button>
-        <button className="btn btn-primary mx-1 my-1"  onClick={removeExtraSpace}>
+        <button  disabled={text.length===0} className="btn btn-primary mx-1 my-1"  onClick={removeExtraSpace}>
           Remove ExtraSpace
         </button>
       </div>
