@@ -63,7 +63,7 @@ const TextForm = (props) => {
       <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
         <h1>Text Summary</h1>
         <p>
-          {text.split(" ").filter((Element)=>{return Element.length!==0}).length} words, {text.length} characters
+          {text.split(/\s+/).filter((Element)=>{return Element.length!==0}).length} words, {text.length} characters
         </p>
         <p>{0.008 * text.split(" ").filter((Element)=>{return Element.length!==0}).length} Minutes to read</p>
         <h2>Preview</h2>
